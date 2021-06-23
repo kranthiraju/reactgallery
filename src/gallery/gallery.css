@@ -1,0 +1,141 @@
+.grid
+{
+    position: relative;
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.grid .search
+{
+    position: absolute;
+    top: -10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 20px;
+}
+.grid .search input
+{
+    width: 100%;
+    background: var(--secondary);
+    border: none;
+    outline: none;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 5px 10px 5px 5px;
+    color: var(--primary);
+}
+.grid .search button
+{
+    border: none;
+    outline: none;
+    background: orange;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.grid .watch
+{
+    position: relative;
+    width: 25%;
+    height: 100%;
+    background: var(--secondary);
+    color: var(--primary);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    padding: 5px;
+}
+.spinner-border
+{
+    content: '';
+    width: 50px;
+    height: 50px;
+    background: rosybrown;
+}
+.grid .watch label
+{
+    position: absolute;
+    top: 4%;
+    left: -8%;
+    width: 120px;
+    height: 20px;
+    transform: rotate(-45deg);
+    background: var(--primary);
+    color: var(--secondary);
+    letter-spacing: 1px;
+    font-weight: bolder;
+}
+.grid .watch button
+{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    border: none;
+    outline: none;
+    font-size: 50px;
+    text-align: center;
+    background: none;
+    color: white;
+    cursor: pointer;
+    text-shadow: 1px 2px rgba(0, 0, 0, 0.5);
+}
+.grid .watch .del_btn
+{
+    position:absolute;
+    left: 45%;
+    top: 0%;
+    width: 50px;
+    font-size: 30px;
+    color: red;
+    text-shadow: none;
+    background: var(--secondary);
+    border-radius: 10% 50% 0px 0px;
+    padding: 5px;
+    font-weight: bolder;
+    transition: 0.5s all;
+    opacity: 0;
+}
+.grid .watch:hover .del_btn
+{
+    opacity: 1;
+    top: -7%;
+}
+.grid .watch h1
+{
+    font-size: 25px;
+    font-weight: lighter;
+    width: 90%;
+}
+.grid .watch p
+{
+    height: 30px;
+}
+.grid .watch img
+{
+    width: 110%;
+    height: 70%;
+    object-position: center;
+    object-fit: fill;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
+}
+.grid .watch img:hover
+{
+    transform: rotateY(10deg);
+}

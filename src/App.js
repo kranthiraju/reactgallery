@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Gallery from './gallery/gallery';
+import Fav from './gallery/fav';
+import Upload from './gallery/upload';
 import './App.css';
 
+
 function App() {
+  const [click,setClick]=useState(false);
+
+  const open_upload=(e)=>{
+    e.preventDefault();
+    if (e.target.innerHTML=="Admin"){
+      e.target.innerHTML="X";
+      e.target.style.background="red";
+    }
+    else {
+      e.target.innerHTML="Admin";
+      e.target.style.background="orange";
+    }
+    setClick(!click);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>MiNi GAllErY</h1>
+      <button className="btn" onClick={open_upload}>Admin</button>
+      {click ? <Upload/> : 
+        <>
+            <Fav/>
+            <Gallery/>
+        </>
+      }
     </div>
   );
 }
