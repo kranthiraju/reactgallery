@@ -17,11 +17,11 @@ const Fav=()=>{
 
     return (
         <div className="fav">
-            <img src="https://img-premium.flaticon.com/png/512/4618/premium/4618547.png?token=exp=1624430204~hmac=6dcd300c196296d5fe3d7aed9939915d" alt="fav" onClick={imgon}/>
+            <img src="https://image.flaticon.com/icons/png/512/1828/1828884.png" alt="fav" onClick={imgon}/>
             <div className="favlist">
-                {docs.forEach(doc =>{
+                {docs.map(doc =>{
                         if (doc.fav===1){
-                            return (<li key={doc.head}>{doc.head}</li>)
+                            return (<li key={'k'+doc.id}>{doc.head}</li>)
                         }
                     }
                 )}; 
