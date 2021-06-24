@@ -58,7 +58,7 @@ const Gallery =()=>{
                 setDel(z.data());
             }
         )
-        if (cfm===(del.head).toLowerCase()){
+        if (cfm===(del.head)){
             favl.doc(id.substring(1)).delete();
         }
         else{
