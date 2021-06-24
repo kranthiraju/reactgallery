@@ -17,7 +17,7 @@ const Fav=()=>{
 
     return (
         <div className="fav">
-            <img src="https://image.flaticon.com/icons/png/512/1828/1828884.png" alt="fav" onClick={imgon}/>
+            <img src="icons/star.png" alt="fav" onClick={imgon}/>
             <div className="favlist">
                 {docs.map(doc =>{
                         if (doc.fav===1){
