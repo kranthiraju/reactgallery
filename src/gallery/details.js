@@ -11,8 +11,8 @@ const Details=({id})=>{
         document.querySelector('.detail_back').style.display="none";
     }
 
-    useEffect( async()=>{
-        await firestore.collection('info').doc(id).get().then(
+    useEffect(()=>{
+         firestore.collection('info').doc(id).get().then(
             z=>{
                 setDoc(z.data());
                 document.querySelector('.detail_back').style.display="flex";
@@ -24,7 +24,7 @@ const Details=({id})=>{
             <div className="detail">
                 <button onClick={close_det}>X</button>
                 <h1>{doc.head}</h1>
-                {doc.url ? (<img src={doc.url}></img>) :
+                {doc.url ? (<img src={doc.url} alt={doc.head}></img>) :
                 (<BounceLoader size={40} color="blue"/>)}
                 <p>{doc.des}</p>
             </div>

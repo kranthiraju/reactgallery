@@ -1,5 +1,5 @@
-import React, { useState ,useEffect} from 'react';
-import { firestore ,timestamp} from '../firebase';
+import React, { useState } from 'react';
+import { firestore } from '../firebase';
 import './upload.css';
 
 const Upload=()=>{

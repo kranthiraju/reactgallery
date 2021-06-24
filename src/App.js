@@ -10,7 +10,7 @@ function App() {
 
   const open_upload=(e)=>{
     e.preventDefault();
-    if (e.target.innerHTML=="Admin"){
+    if (e.target.innerHTML==="Admin"){
       e.target.innerHTML="X";
       e.target.style.background="red";
     }
