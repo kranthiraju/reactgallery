@@ -4,6 +4,7 @@ import Firestore from '../firebase/FireStore/firestore';
 
 const Fav=()=>{
     const {docs}=Firestore('info');
+    const items=[];
 
     const imgon=()=>{
         if (document.querySelector('.favlist').style.display==="none"){
@@ -19,12 +20,14 @@ const Fav=()=>{
         <div className="fav">
             <img src="icons/star.png" alt="fav" onClick={imgon}/>
             <div className="favlist">
-                {docs.map(doc =>{
+                {docs.forEach(doc =>{
                         if (doc.fav===1){
-                            return (<li key={'k'+doc.id}>{doc.head}</li>)
+                            items.push(doc.head);
                         }
                     }
-                )}; 
+                )
+                }
+                <p key={'k'+items}>{items}</p>
             </div>
         </div>
     )
