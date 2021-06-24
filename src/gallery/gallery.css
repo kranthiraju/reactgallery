@@ -58,13 +58,7 @@
     margin-top: 80px;
     margin-bottom: 50px;
     padding: 5px;
-}
-.spinner-border
-{
-    content: '';
-    width: 50px;
-    height: 50px;
-    background: rosybrown;
+    padding-bottom: 0px;
 }
 .grid .watch label
 {
@@ -122,7 +116,8 @@
 }
 .grid .watch p
 {
-    height: 30px;
+    height: 40px;
+    overflow: hidden;
 }
 .grid .watch img
 {

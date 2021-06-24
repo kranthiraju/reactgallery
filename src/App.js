@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>MiNi GAllErY</h1>
+      <h1>BrAnDs GAllErY</h1>
       <button className="btn" onClick={open_upload}>Admin</button>
       {click ? <Upload/> : 
         <>

@@ -1,0 +1,58 @@
+.detail_back
+{
+    position: fixed;
+    inset: 0%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.detail_back .detail
+{
+    position: relative;
+    width: 60%;
+    height: 80%;
+    background: var(--secondary);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.detail_back .detail button
+{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 30px;
+    font-weight: bolder;
+    color: red;
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+.detail_back .detail h1
+{
+    font-size: 40px;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+.detail_back .detail img
+{
+    width: 40%;
+    height: 50%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.detail_back .detail p
+{
+    color: var(--primary);
+    font-size: 20px;
+    width: 80%;
+}

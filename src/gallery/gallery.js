@@ -1,11 +1,16 @@
 import React ,{useEffect, useRef, useState} from 'react';
 import Firestore from '../firebase/FireStore/firestore';
 import { firestore } from '../firebase';
+import Details from './details';
+import {BounceLoader} from 'react-spinners'
 import './gallery.css';
 
 const Gallery =()=>{
     const {docs,setDocs}=Firestore('info');
     const favl=firestore.collection('info');
+
+    const [imgd,setImgd]=useState('');
+    const [del,setDel]=useState([]);
 
     const srhname= useRef();
 
@@ -45,8 +50,20 @@ const Gallery =()=>{
 
     const deleteHandle=(e)=>{
         const id=e.target.id;
-        favl.doc(id.substring(1)).delete();
         e.preventDefault();
+
+        const cfm=prompt('Enter your Heading To delete :');
+        favl.doc(id.substring(1)).get().then(
+            z=>{
+                setDel(z.data());
+            }
+        )
+        if (cfm==(del.head).toLowerCase()){
+            favl.doc(id.substring(1)).delete();
+        }
+        else{
+            alert('Wrong');
+        }
     }
 
     const srh_submit=(e)=>{
@@ -65,7 +82,13 @@ const Gallery =()=>{
         setDocs(list);
     }
 
+    const imgHandle=(e)=>{
+        const imgid=e.target.id;
+        setImgd(imgid.substring(1));
+    }
     return (
+        <>
+        {imgd!=="" ? (<Details id={imgd}/>): <></>}
         <div className="grid">
             <div className="search">
                 <input type="text" placeholder="Type to search" ref={srhname}></input>
@@ -77,13 +100,14 @@ const Gallery =()=>{
                     <label>New</label>
                     <button onClick={favclick} id={item.id}>+</button>
                     <h1>{item.head}</h1>
-                    <img src={item.url} alt={item.head} />                    
+                    <img src={item.url} alt={item.head} onClick={imgHandle} id={'i'+item.id}/>                    
                     <p>{item.des}</p>
                 </div>
             ))) : 
-            (<h1>Not There</h1>)
+            (<BounceLoader size={40} color="#FFEED5" css="top:30%"/>)
             }
         </div>
+    </>
     )
 }
 

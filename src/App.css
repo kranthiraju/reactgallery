@@ -10,6 +10,7 @@ body
     color: var(--secondary);
     font-family: 'Cinzel', sans-serif;
     user-select: none;
+    scroll-behavior: smooth;
 }
 .app
 {

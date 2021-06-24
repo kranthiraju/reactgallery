@@ -1,11 +1,9 @@
 import React, { useState ,useEffect} from 'react';
 import { firestore ,timestamp} from '../firebase';
 import './upload.css';
-import { ClipLoader } from 'react-spinners';
 
 const Upload=()=>{
     const collectionRef= firestore.collection("info");
-    const [loading,setLoading]=useState(false);
 
 
     const [head,setHead]=useState('');
@@ -52,7 +50,6 @@ const Upload=()=>{
                 <input type="text" placeholder="Enter URL:" onChange={urlHandle} value={url}/>
                 <input type="text" placeholder="Enter Description:" onChange={desHandle} value={des}/>
                 <button onClick={onsubmitbtn}>+</button>
-                <ClipLoader color="blue" loading={loading} size="50"></ClipLoader>
             </div>
         </div>
     )
